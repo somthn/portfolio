@@ -1,0 +1,323 @@
+/************* 공통 **************/
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+*:after,*:before 
+{
+    box-sizing: inherit;
+}
+
+html
+{
+    height: 100%;
+    
+}
+
+  body {
+    /* font-family: 'Song Myung', serif; */
+    font-family: 'MaruBuriExtraLight';
+    font-family: 'MaruBuriLight';
+    font-family: 'MaruBuri';
+    font-family: 'MaruBuriBold';
+    font-family: 'MaruBuriSemiBold';
+    margin: 0;
+  }
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0,0,0,0.5);
+    font-size: 2rem;
+    min-height: 100%;
+    height: 100vh;
+  }
+  .Quick-navigation {
+    position: fixed;
+    z-index: 1000;
+    margin: 0;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .Quick-navigation-item {
+    color: rgba(0,0,0,0.4);
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: color 0.3s;
+    padding: 0.5em;
+    display: block;
+    pointer-events: all;
+  }
+  .Quick-navigation-item:hover,
+  .Quick-navigation-item.current {
+    color: rgb(205, 239, 255);
+  }
+  .Scroll-progress-indicator {
+    will-change: opacity, transform;
+    transition: all 0.5s;
+    left: -10px;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    padding: 2em;
+    transform: translateX(200%) translateY(-50%);
+    background-color: rgba(0,0,0,0.1);
+  }
+  .Scroll-progress-indicator.visible {
+    transform: translateX(-100%) translateY(-50%);
+    opacity: 1;
+  }
+  #A {
+    background:linear-gradient(to top, rgba(125,185,232,1) 50%,rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%);
+  }
+  #B {
+    /* background-color: rgba(30,87,153,1); */
+    background:linear-gradient(to bottom, rgba(125,185,232,1) 50%,rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%);
+  }
+  #C {
+    background:linear-gradient(to top, rgba(125,185,232,1) 50%,rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%);
+  }
+  #D {
+    background-color: #70acf0;
+
+  }
+  #E {
+    background-color: #96ccf8;
+  }
+  .Scroll-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2);
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 1.5rem;
+    padding: 0.5em;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s;
+    outline: none;
+    z-index: 1000;
+  }
+  .Scroll-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .Scroll-to-top:hover {
+    color: rgba(255,255,255,0.9);
+  }
+  
+  /************** section A ***************/
+   /* background animation */
+
+.blur,
+.main,
+.particles{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.blur{
+/* 	  background-color: #212121; */
+    /* background-image: url("https://github.com/ricardoolivaalonso/recursos/blob/master/bg.jpg?raw=true"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+	  transform: scale(1.2);
+/*     animation: bg 8s linear infinite alternate; */
+
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+}
+.title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 10px;
+    padding: 12.5px 25px;
+    text-shadow: 1px 1px 10px black;
+    border: 2px solid rgba( 255, 255, 255, .5);
+    border-radius: 4px;
+    color: white;
+}
+
+.particles{
+    position: absolute;
+    z-index: 200;
+    overflow: hidden;
+}
+
+.particle{
+    border-radius: 50%;
+    filter: blur(3px);
+    position: absolute;
+}
+@keyframes bg {
+    0%{ transform: scale(1.2);}
+    100%{ transform: scale(1.3);}
+}
+@keyframes move {
+    0%{
+        transform: translateX(0);
+        opacity: 0;
+    }
+    10% ,90%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(45vw);
+        opacity: 0;
+    }
+}
+
+
+/****************** section B ********************/
+
+#B
+{
+    height: 100%;
+    color: rgba(255, 255, 255, 0.808);
+    font-size: 1.2rem;
+    align-items: baseline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    /* padding: 5vh 100px; */
+    background:linear-gradient(to bottom, rgba(125,185,232,1) 50%,rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%);
+}
+
+.section_wrap
+{
+    display: block;
+    width: 100%;
+}
+
+.main_text
+{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.952);
+}
+
+.section_wrap p
+{
+    padding-top: 50px;
+    display: block;
+    text-align: center;
+}
+
+
+/****************** section C ********************/
+
+#C
+{
+    height: 100%;
+    color: rgba(255, 255, 255, 0.808);
+    font-size: 1.2rem;
+    align-items: baseline;
+    display: flex;
+    /* align-items: center; */
+    justify-content: baseline;
+    min-height: 100vh;
+}
+
+.slider-wrapper {
+    font-size: 40px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .slider {
+    height: 50px;
+    overflow: hidden;
+    padding: 0 10px;
+  }
+  
+  .slider > div {
+    box-sizing: border-box;
+    color: #FFF;
+    height: 50px;
+    margin-bottom: 50px;
+    padding: 0 10px;
+    text-align: center;
+  }
+  
+  .text1 {
+    background-color: #2ed573;
+    animation: slide 15s linear infinite;
+  }
+  
+  .text2 {
+    background-color: #a647dd;
+  }
+  
+  .text3 {
+    background-color: #ff4757;
+  }
+
+  .text4
+  {
+    background-color: pink;
+  }
+
+  .text5
+  {
+    background-color: rgb(248, 208, 78);
+  }
+  
+  @keyframes slide {
+    0% { margin-top: -500px; }
+    5% { margin-top: -400px; }
+    20% { margin-top: -400px; }
+    25% { margin-top: -300px; }
+    40% { margin-top: -300px; }
+    45% { margin-top: -200px; }
+    60% { margin-top: -200px; }
+    65% { margin-top: -100px; }
+    80% { margin-top: -100px; }
+    85% { margin-top: -0; }
+    100% { margin-top: 0; }
+  }
+
+.skills_img 
+{
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.skills_img img
+{
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}

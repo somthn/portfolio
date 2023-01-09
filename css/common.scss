@@ -1,0 +1,126 @@
+$container-shadow: 0.5rem 0.5rem 2rem 0 rgba(black, 0.2);
+
+$gutter: 30px;
+$border-width: 4px;
+$dot-diameter: 8px;
+
+.timeline {
+    margin: 50px auto;
+    width: 100%;
+    max-width: 1000px;
+    background: #fff;
+    padding: 100px 50px;
+    position: relative;
+    box-shadow: $container-shadow;
+}
+
+h1 {
+	text-align: center;
+	font-weight: 300;
+	color: #777;
+	span {
+		font-weight: 600;
+	}
+}
+
+.timeline_container {
+	width: 100%;
+	padding: 50px 0;
+	margin: 50px auto;
+	position: relative;
+	overflow: hidden;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -1px;
+		width: 2px;
+		height: 100%;
+		background: #ccd1d9;
+		z-index: 1;
+	}
+}
+.timeline-block {
+    width: -webkit-calc(50% + 8px);
+    width: -moz-calc(50% + 8px);
+    width: calc(50% + 8px);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    clear: both;
+}
+
+.timeline-block-right {
+    float: right;
+}
+
+.timeline-block-left {
+    float: left;
+    direction: rtl;
+    .marker {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid #f5f7fa;
+        background: #4f5ee9;
+        margin-top: 10px;
+        z-index: 9999;
+    }
+}
+
+.marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #f5f7fa;
+    background: #4fc1e9;
+    margin-top: 10px;
+    z-index: 9999;
+}
+
+.timeline-content {
+	width: 95%;
+	padding: 0 15px;
+	color: #666;
+	h3 {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		font-size: 25px;
+		font-weight: 500;
+	}
+	span {
+		font-size: 15px;
+		color: #a4a4a4;
+	}
+	p {
+		font-size: 14px;
+		line-height: 1.5em;
+		word-spacing: 1px;
+		color: #888;
+	}
+}
+
+@media screen and (max-width: 768px) {
+    .timeline_container:before {
+        left: 8px;
+        width: 2px;
+    }
+    .timeline-block {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .timeline-block-right {
+        float: none;
+    }
+
+    .timeline-block-left {
+        float: none;
+        direction: ltr;
+    }
+}
