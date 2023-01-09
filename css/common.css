@@ -109,4 +109,180 @@ h1 span {
     float: none;
     direction: ltr;
   }
-}/*# sourceMappingURL=common.css.map */
+}
+/*======================== section C skills =========================*/
+.skills {
+  margin: 50px auto;
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  padding: 100px 50px;
+  position: relative;
+  box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.lines {
+  height: 100%;
+  position: relative;
+}
+
+.line {
+  height: inherit;
+  width: 2px;
+  position: absolute;
+  background: rgba(238, 238, 238, 0.6);
+}
+.line.l--0 {
+  left: 0;
+}
+.line.l--25 {
+  left: 25%;
+}
+.line.l--50 {
+  left: 50%;
+}
+.line.l--75 {
+  left: 75%;
+}
+.line.l--100 {
+  left: calc(100% - 1px);
+}
+
+.line__label {
+  display: block;
+  width: 100px;
+  text-align: center;
+  position: absolute;
+  bottom: -20px;
+  right: -50px;
+}
+.line__label.title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.charts {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.chart:not(:first-child) {
+  margin-top: 10px;
+}
+.chart span {
+  color: #777;
+}
+
+.chart__title {
+  display: block;
+  margin: 0 0 10px;
+  font-weight: bold;
+  opacity: 0;
+  -webkit-animation: 1s anim-lightspeed-in ease forwards;
+          animation: 1s anim-lightspeed-in ease forwards;
+}
+.chart--prod .chart__title {
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
+}
+
+.chart--horiz {
+  overflow: hidden;
+}
+
+.chart__bar {
+  height: 30px;
+  margin-bottom: 10px;
+  background: linear-gradient(to left, #e785be, #5cb4fc);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  opacity: 0;
+  -webkit-animation: 1s anim-lightspeed-in ease forwards;
+          animation: 1s anim-lightspeed-in ease forwards;
+}
+.chart__bar span {
+  color: #fff;
+}
+.chart--dev .chart__bar:nth-of-type(11) {
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+.chart--dev .chart__bar:nth-of-type(10) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+.chart--dev .chart__bar:nth-of-type(9) {
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
+}
+.chart--dev .chart__bar:nth-of-type(8) {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+.chart--dev .chart__bar:nth-of-type(7) {
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
+}
+.chart--dev .chart__bar:nth-of-type(6) {
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s;
+}
+.chart--dev .chart__bar:nth-of-type(5) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+.chart--dev .chart__bar:nth-of-type(4) {
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
+}
+.chart--dev .chart__bar:nth-of-type(3) {
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
+}
+.chart--dev .chart__bar:nth-of-type(2) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+.chart--dev .chart__bar:nth-of-type(1) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+.chart--prod .chart__bar:nth-of-type(2) {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+.chart--prod .chart__bar:nth-of-type(1) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.chart__label {
+  padding-left: 10px;
+  line-height: 30px;
+  color: white;
+}
+
+@-webkit-keyframes anim-lightspeed-in {
+  0% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes anim-lightspeed-in {
+  0% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/*============================ snow ===============================*//*# sourceMappingURL=common.css.map */

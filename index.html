@@ -29,13 +29,13 @@
       <a href="#A" class="Quick-navigation-item">HOME</a>
       <a href="#B" class="Quick-navigation-item">ABOUT</a>
       <a href="#C" class="Quick-navigation-item">SKILLS</a>
-      <a href="#D" class="Quick-navigation-item">WEBSITE</a>
+      <a href="#D" class="Quick-navigation-item">WORKS</a>
       <a href="#E" class="Quick-navigation-item">CONTACT</a>
       <div class="Scroll-progress-indicator"></div>
     </nav>
     <section id="A" class="js-scroll-step">
       <div class="section_wrap">
-        <div class="blur"></div>
+        <!-- <div class="blur"></div> -->
         <div
           class="main"
           id="main"
@@ -72,7 +72,7 @@
               <div class="timeline-content">
                 <h3>8 .2022 ~ 3 .2022</h3>
                 <span
-                  >클라우드(AWS)기반 Java/Spring 융합 개발자 양성 (수료)</span
+                  >클라우드(AWS)기반 Java/Spring 융합 개발자 양성</span
                 >
               </div>
             </div>
@@ -81,9 +81,7 @@
               <div class="timeline-content">
                 <h3>3 .2022 ~ 2 .2022</h3>
                 <span
-                  >비개발자를위한, 웹개발종합반(프로그래밍실무, 풀스택)[초급]
-                  (수료)</span
-                >
+                  >비개발자를위한, 웹개발종합반(프로그래밍실무, 풀스택)[초급]</span>
               </div>
             </div>
             <div class="timeline-block timeline-block-right">
@@ -111,14 +109,14 @@
               <div class="marker"></div>
               <div class="timeline-content">
                 <h3>2 .2018 ~ 2 .2016</h3>
-                <span>창원문성대학교 (졸업)</span>
+                <span>창원문성대학교</span>
               </div>
             </div>
             <div class="timeline-block timeline-block-left">
               <div class="marker"></div>
               <div class="timeline-content">
                 <h3>2 .2015 ~ 2 .2012</h3>
-                <span>창원사파고등학교 (졸업)</span>
+                <span>창원사파고등학교</span>
               </div>
             </div>
           </div>
@@ -127,9 +125,11 @@
     </section>
     <section id="C" class="js-scroll-step">
       <div class="section_wrap">
-        <h1 class="main_text">SKILLS</h1>
-        <div class="slider-wrapper">
-          <div>I am a</div>  
+        <h1 class="main_text" data-aos="fade-up" data-aos-duration="2000">
+          SKILLS
+        </h1>
+        <div class="slider-wrapper" data-aos="fade-up" data-aos-duration="2500">
+          <div>I am a</div>
           <div class="slider">
             <div class="text1">HTML</div>
             <div class="text2">CSS</div>
@@ -139,25 +139,124 @@
           </div>
           <div>developer</div>
         </div>
-        <div class="skills_img">
-            <img src="./image/html.svg" alt="html">
-            <img src="./image/css.svg" alt="css">
-            <img src="./image/javascript.svg" alt="JAVASCRIPT">
-            <img src="./image/jQuery.svg" alt="jQuery">
-            <img src="./image/java.svg" alt="JAVA">
+        <div class="skills" data-aos="fade-up" data-aos-duration="2500">
+          <div class="skills_img">
+            <img src="./image/html.svg" alt="html" />
+            <img src="./image/css.svg" alt="css" />
+            <img src="./image/javascript.svg" alt="JAVASCRIPT" />
+            <img src="./image/jQuery.svg" alt="jQuery" />
+            <img src="./image/java.svg" alt="JAVA" />
+          </div>
+          <ul class="lines">
+            <li class="line l--0">
+              <!-- <span class="line__label title"></span> -->
+            </li>
+            <li class="line l--25">
+              <span class="line__label"></span>
+            </li>
+            <li class="line l--50">
+              <span class="line__label"></span>
+            </li>
+            <li class="line l--75">
+              <span class="line__label"></span>
+            </li>
+            <li class="line l--100">
+              <span class="line__label"></span>
+            </li>
+          </ul>
+
+          <div class="charts">
+            <div class="chart chart--dev">
+              <span class="chart__title">Development</span>
+              <ul class="chart--horiz">
+                <li class="chart__bar" style="width: 98%">
+                  <span class="chart__label"> HTML5 </span>
+                </li>
+                <li class="chart__bar" style="width: 90%">
+                  <span class="chart__label"> CSS3</span>
+                </li>
+                <li class="chart__bar" style="width: 75%">
+                  <span class="chart__label"> JavaScript </span>
+                </li>
+                <li class="chart__bar" style="width: 70%">
+                  <span class="chart__label"> jQuery </span>
+                </li>
+                <li class="chart__bar" style="width: 50%">
+                  <span class="chart__label"> JAVA </span>
+                </li>
+              </ul>
+            </div>
+            <div class="chart chart--prod">
+              <span class="chart__title">Productivity</span>
+              <ul class="chart--horiz">
+                <li class="chart__bar" style="width: 30%">
+                  <span class="chart__label">
+                    Github, Sourcetree
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <!-- https://codepen.io/carolineartz/pen/VwYwZaP -->
     </section>
-
     <section id="D" class="js-scroll-step">
-      <h1>D</h1>
+      <div class="section_wrap">
+        <div class="tab-inner">
+          <input type="radio" name="tabmenu" id="tab1" checked />
+          <input type="radio" name="tabmenu" id="tab2" />
+          <input type="radio" name="tabmenu" id="tab3" />
+          <div class="tabs">
+            <h1 class="main_text" data-aos="fade-up" data-aos-duration="2000">
+              WORKS
+            </h1>
+            <div class="items">
+              <div class="tab-item">
+                <div class="item-wrap">
+                  <h1 class="tabs-title">인간의 시간을 연구하는 기업, 메디톡스</h2>
+                  <div class="item-inner">
+                    <div class="item-img">
+                      <img src="./image/sectionD/메디톡스.png" alt="">
+                    </div>
+                    <div class="item-txt">
+                      <p>Main page (responsive)</p>
+                      <p>
+                        풀 페이지 슬라이드만 있었던 메인화면에 공지/홍보자료 게시판은 탭 메뉴를, 
+                        상품을 슬라이드 기능을 구현하여 기업에 대한 정보를 추가하였습니다.
+                      </p>
+                      <p>사용 스킬 : HTML, CSS, SCSS, JavaScript, jQuery</p>
+                    </div>
+                  </div>
+                  <div class="item-shortcut">
+                    <button type="button">바로가기</button>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-item">
+                <h1>Slide Content 2</h1>
+              </div>
+              <div class="tab-item">
+                <h1>Slide Content 3</h1>
+              </div>
+            </div>
+          </div>
+          <div class="tab-btn">
+            <label for="tab1"></label>
+            <label for="tab2"></label>
+            <label for="tab3"></label>
+          </div>
+        </div>
+      </div>
     </section>
-
     <section id="E" class="js-scroll-step">
-      <h1>E</h1>
+      <div class="section_wrap">
+        <!-- <div class="background">
+          <img src="./image/city-40495411.png" alt="">
+        </div> -->
+        <canvas id="canvas">Canvas not supported.</canvas>
+      </div>
     </section>
-
     <button class="Scroll-to-top">Scroll To Top</button>
     <script src="./js/main.js"></script>
     <script>
