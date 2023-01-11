@@ -231,7 +231,9 @@
  
  })();
 
- /* section A animation */
+
+ /* ================ section A animation ================== */
+
  var particles= document.getElementById("particles");
 
  function main(){
@@ -262,244 +264,205 @@
  window.addEventListener("load", main);
 
 
- /* ========= section D snow ======== */
- document.addEventListener('scroll',function(){
-   let currentScrollValue = document.documentElement.scrollTop; //현재의 스크롤 값 확인
-   
- });
+/*
+  Proper Parallax
+*/
+function getTop(elem) {
+  let box = elem.getBoundingClientRect();
+  let body = document.body;
+  let docEl = document.documentElement;
+  let scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+  let clientTop = docEl.clientTop || body.clientTop || 0;
+  let top = box.top + scrollTop - clientTop;
+  return Math.round(top);
+}
+function parallaxImages() {
+  // Set the scroll for each parallax individually
+  let plx = document.getElementsByClassName('parallax');
+  for (i = 0; i < plx.length; i++) {
+    let height = plx[i].clientHeight;
+    let img = plx[i].getAttribute('data-plx-img');
+    let plxImg = document.createElement("div");
+    plxImg.className += " plx-img";
+    plxImg.style.height = (height + (height / 2)) + 'px';
+    plxImg.style.backgroundImage = 'url(' + img + ')';
+    plx[i].insertBefore(plxImg, plx[i].firstChild);
+  }
+}
+window.addEventListener('load', parallaxImages);
+function plxScroll() {
+  let scrolled = window.scrollY;
+  let win_height_padded = window.innerHeight * 1.25;
+  // Set the scroll for each parallax individually
+  let plx = document.getElementsByClassName('parallax');
+  for (i = 0; i < plx.length; i++) {
+    let offsetTop = plx[i].getBoundingClientRect().top + scrolled;
+    //let orientation = plx[i].getAttribute('data-plx-o');
+    if (scrolled + win_height_padded >= offsetTop) {
+      let plxImg = plx[i].getElementsByClassName('plx-img')[0];
+      if (plxImg) {
+        let plxImgHeight = plxImg.clientHeight;
+        let singleScroll = (scrolled - offsetTop) - plxImgHeight / 5;
+        plxImg.style.top = (singleScroll / 5) + "px";
+      }
+    }
+  }
+}
+window.addEventListener('load', plxScroll);
+window.addEventListener('resize', plxScroll);
+window.addEventListener('scroll', plxScroll);
 
+
+
+
+
+ /* ============= section D ============= */
+
+let modal = document.getElementsByClassName("item-txt"); //modal 가져오기
+let openModal = document.getElementsByClassName("item-img"); //modal 띄우기 위한 버튼 가져오기
+let closeBtn = document.getElementsByClassName("item-txt-btn"); //modal 닫는 버튼
+let funcs = [];
+
+//modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
+const modalToggle = (num) => {
+  return () => { //modal 띄우기
+    openModal[num].onclick = () => {
+      modal[num].style.display = "block"
+      console.log(num);
+    }
+
+    //modal 닫기
+    closeBtn[num].onclick = () => {
+      modal[num].style.display = "none";
+    }
+  }
+}
+
+// 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의
+for(let i = 0; i < openModal.length; i++){
+  funcs[i] = modalToggle(i);
+}
+
+// 원하는 Modal 수만큼 funcs 함수를 호출
+for(let j = 0; j < openModal.length; j++){
+  funcs[j]();
+}
 
  
- /* ========= section E snow ======== */
- (function () {
-    'use strict';
-    window.addEventListener('load', function() {
-      var canvas = document.getElementById('canvas');
-  
-      if (!canvas || !canvas.getContext) {
-        return false;
-      }
-  
-      /********************
-        Random Number
-      ********************/
-  
-      function rand(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-      }
-  
-      /********************
-        Var
-      ********************/
-  
-      // canvas 
-      var ctx = canvas.getContext('2d');
-      var X = canvas.width = window.innerWidth;
-      var Y = canvas.height = window.innerHeight;
-  
-      /********************
-        Animation
-      ********************/
-  
-      window.requestAnimationFrame =
-        window.requestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.msRequestAnimationFrame ||
-        function(cb) {
-          setTimeout(cb, 17);
-        };
-  
-      /********************
-        Ground
-      ********************/
+ /* ==================== section E snow ==================== */
+
+/* ---- particles.js config ---- */
+window.addEventListener('DOMContentLoaded', (event) => {
+    particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value":40,
+            "density": {
+              "enable": false,
+              "value_area": 1972.8691040806818
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+            "image": {
+              "src": "img/github.svg",
+              "width": 100,
+              "height": 100
+            }
+          },
+          "opacity": {
+            "value": 0.43292125643369117,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 11.565905665290902,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": false,
+            "distance": 561.194221302933,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 3,
+            "direction": "bottom",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 1282.7296486924183,
+              "rotateY": 1362.9002517356944
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": false,
+              "mode": "bubble"
+            },
+            "onclick": {
+              "enable": false,
+              "mode": "bubble"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 400,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });  
       
-      function drawGround() {
-        ctx.beginPath();
-        ctx.fillStyle = 'rgb(255, 255, 255)';
-        ctx.rect(0, Y - Y * 0.1, X, Y - Y * -0.1);
-        ctx.fill();
-      }
-  
-      /********************
-        Moon
-      ********************/
-      
-      var radius = 150;
-  
-      if (X < 768) {
-        radius = 100;
-      }
-  
-      function drawMoon() {
-        ctx.save();
-        ctx.beginPath();
-        var col = '255, 255, 255';
-        var g = ctx.createRadialGradient(X / 2, Y / 3, radius, X / 3, Y / 3, 0);
-        g.addColorStop(0, "rgba(" + col + ", " + (1 * 1) + ")");
-        g.addColorStop(0.5, "rgba(" + col + ", " + (1 * 0.2) + ")");
-        g.addColorStop(1, "rgba(" + col + ", " + (1 * 0) + ")");
-        ctx.fillStyle = g;
-        ctx.arc(X / 2, Y / 3, radius, Math.PI * 2, false);
-        ctx.fill();
-        ctx.restore();
-      }
-  
-      /********************
-        Snow
-      ********************/
-      
-      // var
-      var snowNum = 80;
-      var backSnowNum = 80;
-      var snows = [];
-      var backSnows = [];
-  
-      if (X < 768) {
-        snowNum = 25;
-        backSnowNum = 25;
-      }
-       
-      function Snow(ctx, x, y, r, g) {
-        this.ctx = ctx;
-        this.init(x, y, r, g);
-      }
-  
-      Snow.prototype.init = function(x, y, r, g) {
-        this.x = x;
-        this.y = y;
-        this.r = r;
-        this.c = '255, 255, 255';
-        this.v = {
-          x: 0,
-          y: g
-        };
-      };
-  
-      Snow.prototype.updatePosition = function() {
-        this.y += this.v.y;
-      };
-      
-      Snow.prototype.wrapPosition = function() {
-        if (this.x - this.r > X) {
-          this.x = 0;
-        }
-        if (this.x + this.r < 0) {
-          this.x = X;
-        }
-        if (this.y - this.r > Y) {
-          this.y = 0;
-        }
-        if (this.y + this.r < 0) {
-          this.y = Y;
-        }
-      };
-  
-      Snow.prototype.draw = function() {
-        ctx = this.ctx;
-        ctx.save();
-        ctx.beginPath();
-        ctx.fillStyle = this.gradient();
-        ctx.arc(this.x, this.y, this.r, Math.PI * 2, false);
-        ctx.fill();
-        ctx.closePath();
-        ctx.restore();
-      };
-  
-      Snow.prototype.gradient = function () {
-        var col = this.c;
-        var g = this.ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
-        g.addColorStop(0, "rgba(" + col + ", " + (1 * 1) + ")");
-        g.addColorStop(0.5, "rgba(" + col + ", " + (1 * 0.2) + ")");
-        g.addColorStop(1, "rgba(" + col + ", " + (1 * 0) + ")");
-        return g;
-      };
-  
-      Snow.prototype.resize = function() {
-        this.x = rand(0, X);
-        this.y = rand(0, Y);
-      };
-  
-      Snow.prototype.render = function() {
-        this.updatePosition();
-        this.wrapPosition();
-        this.draw();
-      };
-  
-      for (var i = 0; i < backSnowNum; i++) {
-        var snow = new Snow(ctx, rand(0, X), rand(0, Y), rand(1, 5), Math.random());
-        backSnows.push(snow);
-      }
-      
-      for (var i = 0; i < snowNum; i++) {
-        var snow = new Snow(ctx, rand(0, X), rand(0, Y), rand(10, 15), Math.random() + 0.3);
-        snows.push(snow);
-      }
-      
-      /********************
-        Tree
-      ********************/
-          
-      // var 
-      
-      /********************
-        Render
-      ********************/
-      
-      function render(){
-        ctx.clearRect(0, 0, X, Y);
-        drawMoon();
-        drawGround();
-        for (var i = 0; i < backSnows.length; i++) {
-          backSnows[i].render();
-        }
-        // for (var i = 0; i < backTrees.length; i++) {
-        //   backTrees[i].render();
-        // }
-        // for (var i = 0; i < trees.length; i++) {
-        //   trees[i].render();
-        // }
-        for (var i = 0; i < snows.length; i++) {
-          snows[i].render();
-        }
-        requestAnimationFrame(render);
-      }
-  
-      render();
-  
-      /********************
-        Event
-      ********************/
-      
-      // resize
-      function onResize() {
-        X = canvas.width = window.innerWidth;
-        Y = canvas.height = window.innerHeight;
-        drawMoon();
-        drawGround();
-        for (var i = 0; i < snows.length; i++) {
-            snows[i].resize();
-        }
-        for (var i = 0; i < backSnows.length; i++) {
-          backSnows[i].resize();
-        }
-        // for (var i = 0; i < backTrees.length; i++) {
-        //   backTrees[i].resize();
-        // }
-        // for (var i = 0; i < trees.length; i++) {
-        //   trees[i].resize();
-        // }
-        for (var i = 0; i < snows.length; i++) {
-          snows[i].resize();
-        }
-      }
-  
-      window.addEventListener('resize', function() {
-        onResize();
-      });
-  
-    });
-    // Author
-    console.log('File Name / snowyLandscape.js\nCreated Date / January 28, 2020\nAuthor / Toshiya Marukubo\nTwitter / https://twitter.com/toshiyamarukubo');
-  })();
-  
+      /* ---- stats.js config ---- */
+});

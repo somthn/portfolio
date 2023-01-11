@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link
-      href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css"
+      href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -21,6 +21,17 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/2e5f69190c.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+      defer
+      data-deferred="1"
+    ></script>
+    <!-- emailJs -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   </head>
@@ -36,16 +47,25 @@
     <section id="A" class="js-scroll-step">
       <div class="section_wrap">
         <!-- <div class="blur"></div> -->
-        <div
-          class="main"
-          id="main"
-          data-aos="fade-down"
-          data-aos-duration="3000"
-        >
-          <h1 class="title">
-            배움과 성장을 즐기는<br />
-            웹퍼블리셔 오유경입니다.
-          </h1>
+        <div class="parallax" data-plx-img="./image/aurora-1197753_1920.jpg">
+          <div class="parallax_txt">
+            <div
+              class="parallax_txt_wrap"
+              data-aos="fade-down"
+              data-aos-duration="3000"
+            >
+              <div class="sectionA_txt">
+                <span>WEBPUBLISHER_</span>
+                <span>OH-</span>
+                <span>YUKYUNG</span>
+              </div>
+              <div class="sectionA_txt2">
+                <span>배움과 성장을 즐기는</span>
+                <span>웹퍼블리셔</span>
+                <span>오유경입니다.</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="particles" id="particles"></div>
       </div>
@@ -71,9 +91,7 @@
               <div class="marker"></div>
               <div class="timeline-content">
                 <h3>8 .2022 ~ 3 .2022</h3>
-                <span
-                  >클라우드(AWS)기반 Java/Spring 융합 개발자 양성</span
-                >
+                <span>클라우드(AWS)기반 Java/Spring 융합 개발자 양성</span>
               </div>
             </div>
             <div class="timeline-block timeline-block-left">
@@ -81,7 +99,9 @@
               <div class="timeline-content">
                 <h3>3 .2022 ~ 2 .2022</h3>
                 <span
-                  >비개발자를위한, 웹개발종합반(프로그래밍실무, 풀스택)[초급]</span>
+                  >비개발자를위한, 웹개발종합반(프로그래밍실무,
+                  풀스택)[초급]</span
+                >
               </div>
             </div>
             <div class="timeline-block timeline-block-right">
@@ -190,9 +210,7 @@
               <span class="chart__title">Productivity</span>
               <ul class="chart--horiz">
                 <li class="chart__bar" style="width: 30%">
-                  <span class="chart__label">
-                    Github, Sourcetree
-                  </span>
+                  <span class="chart__label"> Github, Sourcetree </span>
                 </li>
               </ul>
             </div>
@@ -214,18 +232,42 @@
             <div class="items">
               <div class="tab-item">
                 <div class="item-wrap">
-                  <h1 class="tabs-title">인간의 시간을 연구하는 기업, 메디톡스</h2>
-                  <div class="item-inner">
+                  <h1
+                    class="tabs-title"
+                    data-aos="fade-up"
+                    data-aos-duration="2500"
+                  >
+                    인간의 시간을 연구하는 기업, 메디톡스
+                  </h1>
+                  <div
+                    class="item-inner"
+                    data-aos="fade-up"
+                    data-aos-duration="2500"
+                  >
                     <div class="item-img">
-                      <img src="./image/sectionD/메디톡스.png" alt="">
+                      <img
+                        src="./image/sectionD/메디톡스_.png"
+                        alt="메디톡스"
+                      />
                     </div>
                     <div class="item-txt">
                       <p>Main page (responsive)</p>
                       <p>
-                        풀 페이지 슬라이드만 있었던 메인화면에 공지/홍보자료 게시판은 탭 메뉴를, 
-                        상품을 슬라이드 기능을 구현하여 기업에 대한 정보를 추가하였습니다.
+                        풀 페이지 슬라이드만 있었던 메인화면에 공지/홍보자료
+                        게시판은 탭 메뉴를, 상품을 슬라이드 기능을 구현하여
+                        기업에 대한 정보를 추가하였습니다.
                       </p>
-                      <p>사용 스킬 : HTML, CSS, SCSS, JavaScript, jQuery</p>
+                      <div class="itemtext">
+                        <div class="itemtext_inner">
+                          <p>사용 스킬&ensp;&ensp;</p>
+                          <p>HTML, CSS, SCSS, JavaScript, jQuery, Swiper</p>
+                        </div>
+                        <div class="itemtext_inner">
+                          <p>참여도&ensp;&ensp;</p>
+                          <p>개인 프로젝트(100%)</p>
+                        </div>
+                      </div>
+                      <button class="item-txt-btn">닫기</button>
                     </div>
                   </div>
                   <div class="item-shortcut">
@@ -234,10 +276,69 @@
                 </div>
               </div>
               <div class="tab-item">
-                <h1>Slide Content 2</h1>
+                <div class="item-wrap">
+                  <h1 class="tabs-title">글로벌 럭셔리 브랜드, 제이에스티나</h1>
+                  <div class="item-inner">
+                    <div class="item-img">
+                      <img
+                        src="./image/sectionD/제이에스티나_.png"
+                        alt="메디톡스"
+                      />
+                    </div>
+                    <div class="item-txt">
+                      <p>Main page (responsive)</p>
+                      <p>
+                        - 복잡했던 헤더를 버튼 클릭 시 메뉴가 나타나는 방식으로
+                        수정했습니다.<br />
+                        - 신제품, 베스트셀러 등 나뉘어있던 상품 목록들을
+                        탭메뉴를 이용하여 하나로 묶고 html 섹션의 개수를
+                        줄였습니다.
+                      </p>
+                      <div class="itemtext">
+                        <div class="itemtext_inner">
+                          <p>사용 스킬&ensp;&ensp;</p>
+                          <p>HTML, CSS, JavaScript, jQuery, Bootstrap, Slick</p>
+                        </div>
+                        <div class="itemtext_inner">
+                          <p>참여도&ensp;&ensp;</p>
+                          <p>개인 프로젝트(100%)</p>
+                        </div>
+                      </div>
+                      <button class="item-txt-btn">닫기</button>
+                    </div>
+                  </div>
+                  <div class="item-shortcut">
+                    <button type="button">바로가기</button>
+                  </div>
+                </div>
               </div>
               <div class="tab-item">
-                <h1>Slide Content 3</h1>
+                <div class="item-wrap">
+                  <h1 class="tabs-title">락 페스티벌 홈페이지</h1>
+                  <div class="item-inner">
+                    <div class="item-img pc">
+                      <img src="./image/sectionD/락페_.png" alt="락페스티벌" />
+                    </div>
+                    <div class="item-txt">
+                      <p>Main page + Sub 9 (PC)</p>
+                      <p>락 페스티벌 홈페이지를 full page로 만들었습니다.</p>
+                      <div class="itemtext">
+                        <div class="itemtext_inner">
+                          <p>사용 스킬&ensp;&ensp;</p>
+                          <p>HTML, CSS, JavaScript, jQuery</p>
+                        </div>
+                        <div class="itemtext_inner">
+                          <p>참여도&ensp;&ensp;</p>
+                          <p>70%</p>
+                        </div>
+                      </div>
+                      <button class="item-txt-btn">닫기</button>
+                    </div>
+                  </div>
+                  <div class="item-shortcut">
+                    <button type="button">바로가기</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -251,10 +352,41 @@
     </section>
     <section id="E" class="js-scroll-step">
       <div class="section_wrap">
-        <!-- <div class="background">
-          <img src="./image/city-40495411.png" alt="">
-        </div> -->
-        <canvas id="canvas">Canvas not supported.</canvas>
+        <h1 class="main_text" data-aos="fade-up" data-aos-duration="2000">
+          CONTACT
+        </h1> 
+        <div id="particles-js"></div>
+        <div class="contact-form-container">
+          <div class="contact-us">
+            <div class="contact-header">
+              <h1>&#9135;&#9135;&#9135;&#9135;&nbsp;&nbsp;CONTACT</h1>
+            </div>
+            <!-- <div class="social-bar">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div> -->
+          </div>
+          <div class="header">
+            <p>궁금한게 있으시면 아래 주소로 연락 주세요.</p>
+          </div>
+          <!-- <div class="address">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>somthna0@gmail.com</h3>
+          </div> -->
+          <div class="phone">
+            <i class="fa-solid fa-phone"></i>
+            <h3>010-2702-6095</h3>
+          </div>
+          <div class="email">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>somthna0@gmail.com</h3>
+          </div>
+
+        </div>
       </div>
     </section>
     <button class="Scroll-to-top">Scroll To Top</button>
