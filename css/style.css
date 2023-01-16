@@ -31,6 +31,7 @@ html
     font-family: 'NanumSquareAcl'; */
     font-family: 'NanumSquareAcr';
     margin: 0;
+    position: relative;
   }
   h1 {
     margin: 0;
@@ -53,6 +54,7 @@ html
     right: 0;
     transform: translateY(-50%);
   }
+
   .Quick-navigation-item {
     color: rgba(0,0,0,0.4);
     text-decoration: none;
@@ -82,6 +84,20 @@ html
     transform: translateX(-100%) translateY(-50%);
     opacity: 1;
     display: none;
+  }
+
+  @media (max-width: 768px)
+  {
+    .Quick-navigation
+    {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 20px;
+      width: 100%;
+      background: rgba(0,0,0,0.2);
+    }
+
   }
 
   #A 
@@ -177,6 +193,14 @@ html
   display: flex;
   justify-content: center;
 
+}
+
+@media (max-width: 768px)
+{
+  .sectionA_txt2.sectionA_txt2 span
+  {
+    font-size: 1.2rem;
+  }
 }
 
    /* background animation */
@@ -279,6 +303,11 @@ html
 {
     display: block;
     width: 100%;
+}
+
+#B .main_text
+{
+  margin-top: 50px;
 }
 
 .main_text
@@ -386,6 +415,21 @@ html
     height: 80px;
     margin: 20px;
 }
+
+@media (max-width: 768px)
+{
+  .slider-wrapper 
+  {
+    display: block;
+    text-align: center;
+  }
+
+  .skills_img
+  {
+    display: none;
+  }
+}
+
 
 /* skillset */
 
@@ -677,7 +721,7 @@ input[id="tab3"]:checked ~ .tab-btn label[for="tab3"] {
 
   .item-txt 
   {
-    padding-top: 50px;
+    padding-top: 20px;
     line-height: 30px;
   }
 
@@ -752,3 +796,5 @@ canvas > .main_text
 {
   position: absolute;
 }
+
+

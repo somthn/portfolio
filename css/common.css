@@ -327,15 +327,10 @@ h1 span {
   }
 }
 .sectionA_txt2 span {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "NanumSquareLight";
 }
 
-@media (max-width: 768px) {
-  .sectionA_txt2 span {
-    font-size: 1.5rem;
-  }
-}
 /*================ contact ================*/
 #particles-js {
   position: absolute;
@@ -529,4 +524,59 @@ form button {
 
 .contact-form {
   grid-area: contact-form;
+}
+
+@media (max-width: 640px) {
+  .address,
+.email,
+.phone {
+    text-align: center;
+    padding: 20px 0;
+    color: #444;
+  }
+  .address h3,
+.email h3,
+.phone h3 {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  .address i,
+.email i,
+.phone i {
+    color: #F8B7D8;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+  .header {
+    display: none;
+  }
+  .header p {
+    font-size: 1rem;
+  }
+  .contact-form-container {
+    display: block;
+    position: relative;
+  }
+  .contact-us {
+    display: block;
+    height: 100%;
+  }
+  .address, .email, .phone {
+    position: absolute;
+    bottom: 0;
+    display: block;
+  }
+  .address {
+    display: block;
+  }
+  .phone {
+    display: none;
+  }
+  .email {
+    display: block;
+    width: 100%;
+  }
+  .contact-form {
+    display: b;
+  }
 }/*# sourceMappingURL=common.css.map */
